@@ -8,16 +8,16 @@ spring:
     gateway:
       routes:
         # 用户服务路由
-        - id: user-service
-          uri: lb://user-service
+        - id: microservicecloud-dept
+          uri: lb://microservicecloud-dept
           predicates:
             - Path=/user/**
           filters:
             - StripPrefix=1
             - name: CircuitBreaker
               args:
-                name: user-service
-                fallbackUri: forward:/fallback/user-service
+                name: microservicecloud-dept
+                fallbackUri: forward:/fallback/microservicecloud-dept
       
 eureka:
   client:
