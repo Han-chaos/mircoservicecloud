@@ -12,6 +12,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+// 为 MICROSERVICECLOUD-DEPT 自定义轮询策略
 @RibbonClient(name="MICROSERVICECLOUD-DEPT",configuration= MySelfRule.class)
 public class DeptConsumer80_App {
     public static void main(String[] args) {
